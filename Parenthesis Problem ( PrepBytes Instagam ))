@@ -1,0 +1,21 @@
+# Taking input from the user
+rahul_string = input("Enter a string :- \n ")
+
+# Declaring a dictionary to store '(' and ')' .
+dic = { '(' : 0 , ')' : 0 }
+
+def solve(string):
+    '''To find out the minimum number of insertions for validity'''
+    if string == "": # if string does no exists then simple return 0 .
+        return 0
+    else:
+        for i in range(len(string)):
+            if string[i] in dic:
+                dic[string[i]] = dic[string[i]] + 1
+        min_key_value = min(dic['('],dic[')'])
+        max_key_value = max(dic.values())
+        # the next line will return the minimum number of paenthesis of any of the 2 types required to make the string valid .
+        return (max_key_value - min_key_value)
+
+# print(solve.__doc__) -> prints the docstring of the function
+solve(rahul_string)
