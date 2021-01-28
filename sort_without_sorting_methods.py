@@ -28,4 +28,17 @@ if __name__=='__main__':
         arr[start],arr[end] = arr[end],arr[start]
         start = start + 1
         end = end - 1
-    print(*arr)    
+    print(*arr)  
+    
+    
+'''
+The Problem statement requires us to sort an array of integers, where integers are in { 0 ,1 , 2 }. But we have a constraint that we cannot use any sorting methods . My approach has been broken down in the following steps:
+Example for sample testcase: [ 0 , 1 , 2 , 1 , 0 ]
+1. Move all zeroes to end.
+Now we have array as [ 1 , 2 , 1 , 0 , 0 ]
+2. Segregate even elements to the left and odd elements to the right.
+Now we have array as [ 2 , 1 , 1 , 0 , 0 ]
+3. Simple reverse the array.
+So we get the final desired output as [ 0 , 0 , 1 , 1 , 2 ]
+All the above steps take O ( N ) Time Complexity and O ( 1 ) Space Complexity which is actually a constraint in the problem statement .
+'''
